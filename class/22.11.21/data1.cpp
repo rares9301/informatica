@@ -21,9 +21,9 @@ int main()
     {
         if (v[i].y == 0)
             write << "Punctul: " << v[i].x << " " << v[i].y;
-        dist = sqrt(< v[i].x * v[i].x + v[i].y * v[i].y) if (dist >= MAX)
+        dist = sqrt(v[i].x * v[i].x + v[i].y * v[i].y) if (dist >= MAX)
             MAX = dist;
-            
+
     }
     write << MAX;
 }
