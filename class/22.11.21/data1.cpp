@@ -1,29 +1,36 @@
 #include <iostream>
 #include <cmath>
-#include <fstream>
-ifstream read("data.in");
-ofstream write("data.out");
 using namespace std;
-int n, i, dist, MAX;
-struct PUNCT
+int sim, sre, k, n;
+float MAX;
+
+typedef struct COMPLEX
 {
-    float x, y;
-} v[100];
+    float re, im;
+};
+float modul(int a, int b)
+{
+    return sqrt(a * a + b * b);
+}
 int main()
 {
+    MAX = 0;
+    sre = 0;
+    sim = 0;
     cin >> n;
-    for (i = 1; i <= n; i++)
+    COMPLEX v[100];
+    for (int i = 1; i <= n; i++)
     {
-        read >> v[i].x;
-        read >> v[i].y;
+        cin >> v[i].re;
+        cin >> v[i].im;
+        sre = sre + v[i].re;
+        sim = sim + v[i].im;
+        if (v[i].re > v[i].im)
+            k++;
+        if (modul(v[i].im, v[i].re) > MAX)
+            MAX = modul(v[i].im, v[i].re);
     }
-    for (i = 1; i <= n; i++)
-    {
-        if (v[i].y == 0)
-            write << "Punctul: " << v[i].x << " " << v[i].y;
-        dist = sqrt(v[i].x * v[i].x + v[i].y * v[i].y) if (dist >= MAX)
-            MAX = dist;
-
-    }
-    write << MAX;
+    cout << sre << "+ i*" << sim << '\n';
+    cout << k << '\n';
+    cout << MAX;
 }
