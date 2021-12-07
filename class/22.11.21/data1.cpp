@@ -9,7 +9,7 @@ typedef struct COMPLEX
     float re, im;
 };
 float modul(int a, int b)
-{
+{mfhkuygv6 7 6hujkmyintv5fgxbc
     return sqrt(a * a + b * b);
 }
 int main()
